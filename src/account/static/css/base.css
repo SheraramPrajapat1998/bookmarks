@@ -1,0 +1,12 @@
+h1{
+  border-bottom: 2px solid indigo;
+}
+
+a{
+  color: #5CC166;
+}
+
+a:hover{
+  text-decoration: none;
+  color: #11A166;
+}
