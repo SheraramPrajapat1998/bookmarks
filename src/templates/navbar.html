@@ -10,7 +10,7 @@
         <a class="nav-link" href="{% url 'dashboard' %}">My dashboard</a>
       </li>
       <li class="nav-item {% if section == 'images' %}active{% endif %}">
-        <a class="nav-link" href="#">Images</a>
+        <a class="nav-link" href="{% url 'images:list' %}">Images</a>
       </li>
     </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
