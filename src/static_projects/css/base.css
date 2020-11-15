@@ -24,7 +24,7 @@ nav{
 
 h1{
   border-bottom: 2px solid indigo;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 a{
@@ -61,4 +61,16 @@ a:hover{
 
 .social ul li.twitter{
   background-color: rgb(58, 223, 223);
+}
+
+img .bookmark_image{
+  width: 100%;
+  max-width: 400px;
+}
+
+.image-info span.count{
+  border: 2px solid darkgray; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  color: darkgrey;
 }

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block title %}{{ image.title }}{% endblock %}
+
+{% block content %}
+  <h1>{{ image.title }}</h1>
+  <div class="row">
+    <div class="col-lg-4 mt-3">
+      <a href="{{ image.image.url }}">
+        <img src="{% thumbnail image.image 350x0 %}" class="image-thumbnail">
+      </a>
+    </div>
+
+    <div class="col-lg-8 mt-3">      
+      {% with total_likes=image.users_like.count %}
+        <div class="image-info">
+          <div class="">
+            <span class="count mb-2">
+              {{ total_likes }} like{{ total_likes|pluralize }}
+            </span>
+          </div>
+          <p>
+            {{ image.description|linebreaks }}
+          </p>
+        </div>
+        <div class="images-likes">
+          {% for user in image.users_like.all %}
+          <div>
+            <img src="{{ user.profile.photo.url }}">
+            <p>{{ user.first_name }}</p>
+          </div>
+          {% empty %}
+            <b>Nobody likes this image yet.</b>
+          {% endfor %}
+        </div>
+      {% endwith %}
+    </div>
+  
+  </div>
+{% endblock %}

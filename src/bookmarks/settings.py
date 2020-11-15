@@ -34,11 +34,13 @@ ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
 INSTALLED_APPS = [
     # local apps
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
 
     # third party apps
     'crispy_forms',
     'social_django',
     'django_extensions',
+    'easy_thumbnails',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -152,10 +154,6 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('FACEBOOK_KEY') # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('FACEBOOK_SECRET') # Facebook App Secret
-print(SOCIAL_AUTH_FACEBOOK_KEY)
-print(SOCIAL_AUTH_FACEBOOK_SECRET)
 
 SOCIAL_AUTH_TWITTER_KEY = os.environ.get('TWITTER_KEY') # Twitter API Key
 SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET') # Twitter API Secret
-print(SOCIAL_AUTH_TWITTER_KEY)
-print(SOCIAL_AUTH_TWITTER_SECRET)

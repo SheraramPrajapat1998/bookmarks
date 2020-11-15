@@ -36,12 +36,41 @@ a:hover{
   color: #11A166;
 }
 
-.social ul li{
+.social ul{
   list-style: none;
 }
 
-/* .social ul li */
+.social ul li{
+  border: 1px solid dark;
+  padding: 10px;
+  border-radius: 10px;
+}
 
-.facebook{
-  background-color: #3B5998; 
+.social ul li a{
+  color: #fff;
+}
+
+.social ul li a:hover{
+  color: #000;
+}
+
+.social ul li.facebook{
+  background-color: #3B5998;
+  color: white;
+}
+
+.social ul li.twitter{
+  background-color: rgb(58, 223, 223);
+}
+
+img .bookmark_image{
+  width: 100%;
+  max-width: 400px;
+}
+
+.image-info span.count{
+  border: 2px solid darkgray; 
+  border-radius: 20px; 
+  padding: 10px 20px; 
+  color: darkgrey;
 }

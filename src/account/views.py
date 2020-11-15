@@ -7,7 +7,6 @@ from django.contrib.auth.models import User
 
 @login_required
 def dashboard(request):
-  print(User.objects.all())
   return render(request, 'account/dashboard.html', {'section': 'dashboard'})
 
 
