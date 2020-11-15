@@ -4,28 +4,41 @@
 {% block title %}Log-in{% endblock %}
 
 {% block content %}
-  <div class="offset-md-3 col-md-6">    
-    <h1>Log-in</h1>
-    {% if form.errors %}
+  <div class="row">    
+    <div class="col-md-6">    
+      <h1>Log-in</h1>
+      {% if form.errors %}
       <div class="alert alert-block alert-danger"> 
         <ul class="m-0"> 
           <li>Your username and password didn't match. Please try again.</li> 
         </ul> 
       </div>
-    {% else %}
+      {% else %}
       <p>Please, use the following form to log-in. If you don't have an
         account <a href="{% url 'register' %}">register here</a>
       </p>
-    {% endif %}
-    
-    <div class="login-form">
-      <form action="{% url 'login' %}" method="post">
-        {{ form|crispy }}
-        {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}" />
-        <p><input type="submit" value="Log-in" class="btn btn-primary"></p>
-      </form>
-      <p><a href="{% url 'password_reset' %}">Forgotten your password?</a></p>
+      {% endif %}
+      
+      <div class="login-form">
+        <form action="{% url 'login' %}" method="post">
+          {{ form|crispy }}
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ next }}" />
+          <p><input type="submit" value="Log-in" class="btn btn-primary"></p>
+        </form>
+        <p><a href="{% url 'password_reset' %}">Forgotten your password?</a></p>
+      </div>
+    </div>
+    <div class="social col-md-6 mt-5">
+      <ul class="text-center mt-5 p-5 ">
+        <li class="facebook border">
+          <a href="{% url 'social:begin' 'facebook' %}">Sign in with Facebook</a>
+        </li>
+        <li class="twitter border mt-2">
+          <a href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a>
+        </li>
+        
+      </ul>
     </div>
   </div>
 {% endblock %}

@@ -39,8 +39,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'social_django',
     'django_extensions',
-    'sslserver',
-    
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -146,4 +145,17 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authenticate.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
+
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('FACEBOOK_KEY') # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('FACEBOOK_SECRET') # Facebook App Secret
+print(SOCIAL_AUTH_FACEBOOK_KEY)
+print(SOCIAL_AUTH_FACEBOOK_SECRET)
+
+SOCIAL_AUTH_TWITTER_KEY = os.environ.get('TWITTER_KEY') # Twitter API Key
+SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET') # Twitter API Secret
+print(SOCIAL_AUTH_TWITTER_KEY)
+print(SOCIAL_AUTH_TWITTER_SECRET)

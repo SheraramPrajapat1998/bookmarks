@@ -18,12 +18,13 @@ nav{
 
 .navbar-light .navbar-nav .nav-link:hover, 
 .navbar-light .navbar-brand:hover,.navbar-nav li:hover{
-  color: blue ;
-  border-bottom: 1px solid blue;
+  color: green;
+  border-bottom: 1px solid green;
 }
 
 h1{
   border-bottom: 2px solid indigo;
+  margin-bottom: 15px;
 }
 
 a{
@@ -33,4 +34,14 @@ a{
 a:hover{
   text-decoration: none;
   color: #11A166;
+}
+
+.social ul li{
+  list-style: none;
+}
+
+/* .social ul li */
+
+.facebook{
+  background-color: #3B5998; 
 }

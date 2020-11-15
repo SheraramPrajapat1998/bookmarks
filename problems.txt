@@ -1,0 +1,3 @@
+facebook auth not working correctly
+twitter auth raises error while registering for the 1st time
+

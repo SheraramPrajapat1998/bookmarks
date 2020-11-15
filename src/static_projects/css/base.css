@@ -18,8 +18,8 @@ nav{
 
 .navbar-light .navbar-nav .nav-link:hover, 
 .navbar-light .navbar-brand:hover,.navbar-nav li:hover{
-  color: blue ;
-  border-bottom: 1px solid blue;
+  color: green;
+  border-bottom: 1px solid green;
 }
 
 h1{
@@ -34,4 +34,31 @@ a{
 a:hover{
   text-decoration: none;
   color: #11A166;
+}
+
+.social ul{
+  list-style: none;
+}
+
+.social ul li{
+  border: 1px solid dark;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.social ul li a{
+  color: #fff;
+}
+
+.social ul li a:hover{
+  color: #000;
+}
+
+.social ul li.facebook{
+  background-color: #3B5998;
+  color: white;
+}
+
+.social ul li.twitter{
+  background-color: rgb(58, 223, 223);
 }
