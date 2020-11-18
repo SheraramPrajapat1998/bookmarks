@@ -21,7 +21,7 @@
               </span> 
               like{{ total_likes|pluralize }}
             </span>
-            <a href="#" data-id="{{ image.id }}" data-action="{% if request.user in users_like %}un{% endif %}like" class="like button btn btn-success ml-5">
+            <a href="#" data-id="{{ image.id }}" data-action="{% if request.user in users_like %}un{% endif %}like" class="like button btn btn-success ml-5 mb-2">
               {% if request.user not in users_like %}
                 Like
               {% else %}
@@ -33,10 +33,10 @@
             {{ image.description|linebreaks }}
           </p>
         </div>
-        <div class="images-likes">
+        <div class="image-likes" >
           {% for user in users_like %}
-          <div>
-            <img src="{{ user.profile.photo.url }}" class="rounded-circle" style="max-width: 100px;">
+          <div style="float: left; width: auto; padding: 10px; text-align: center;">
+            <img src="{{ user.profile.photo.url }}" class="rounded-circle">
             <p>{{ user.first_name }}</p>
           </div>
           {% empty %}

@@ -7,7 +7,7 @@
   
   {% with total_images_created=request.user.images_created.count %}
     <p>Welcome to your dashboard. You have bookmarked
-      {{ total_images_created }} image{{ total_images_created| pluralize }}.
+      {{ total_images_created }} image{{ total_images_created|pluralize }}.
     </p>
   {% endwith %}
   
