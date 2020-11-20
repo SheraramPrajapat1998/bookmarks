@@ -140,12 +140,14 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'static_root
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn', 'media_root')
 
+# login, logout and redirect settings
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# Backend Authentication settings
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authenticate.EmailAuthBackend',
@@ -154,14 +156,21 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.google.GoogleOAuth2',
 ]
 
+# social auth settings
 SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('FACEBOOK_KEY') # Facebook App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('FACEBOOK_SECRET') # Facebook App Secret
 
 SOCIAL_AUTH_TWITTER_KEY = os.environ.get('TWITTER_KEY') # Twitter API Key
 SOCIAL_AUTH_TWITTER_SECRET = os.environ.get('TWITTER_SECRET') # Twitter API Secret
 
+# absolute url overide setting
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
 }
 
 THUMBNAIL_DEBUG = True
+
+# redis settings
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0

@@ -10,6 +10,13 @@
       {{ total_images_created }} image{{ total_images_created|pluralize }}.
     </p>
   {% endwith %}
+
+  <p>  
+    <b>
+      Most viewed images
+      <a href="{% url 'images:ranking' %}">check here</a>
+    </b>
+  </p>
   
   <p>Drag the following button to your bookmarks toolbar to bookmark
     images from other websites → <a href="javascript: {% include 'bookmarklet_launcher.js' %}" class="btn btn-success">Bookmark it</a>

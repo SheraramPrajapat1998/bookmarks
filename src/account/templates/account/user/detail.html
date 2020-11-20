@@ -4,28 +4,34 @@
 {% block title %}{{ user.get_full_name }}{% endblock %}
 
 {% block content %}
-  <h1>{{ user.get_full_name }}</h1>
-  <div class="profile-info">
-    <img src="{% thumbnail user.profile.photo 180x180 %}" alt="" class="user-detail">
+<div class="row">
+  <div class="col">
+    <h1>{{ user.get_full_name }}</h1>
+    <div class="profile-info">
+    <img src="{% thumbnail user.profile.photo 180x180 %}" alt="{{ user.get_full_name }}" class="user-detail">
   </div>
   {% with total_followers=user.followers.count %}
   <div class="image-info">    
-    <span class="count">
-      <span class="total">{{ total_followers }}</span>
-      follower{{ total_followers|pluralize }}
-    </span>
-    <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow button float-right btn btn-success">
-      {% if request.user not in user.followers.all %}
+    <div class="col">      
+      <span class="count">
+        <span class="total">{{ total_followers }}</span>
+        follower{{ total_followers|pluralize }}
+      </span>
+      <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow button float-right btn btn-success">
+        {% if request.user not in user.followers.all %}
         Follow
-      {% else %}
+        {% else %}
         Unfollow
-      {% endif %}
-    </a>
+        {% endif %}
+      </a>
+    </div>
     <div id="image-list" class="image-container">
       {% include 'images/image/list_ajax.html' with images=user.images_created.all %}
     </div>
   </div>
   {% endwith %}    
+  </div>
+</div>
 {% endblock %}
 
 
