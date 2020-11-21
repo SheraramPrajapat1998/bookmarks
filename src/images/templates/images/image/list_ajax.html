@@ -1,8 +1,8 @@
 {% load thumbnail %}
 
-<div class="row">
+<div class="row text-center">
   {% for image in images %}
-    <div class="col-4 my-2">
+    <div class="col-sm-6 col-lg-4 my-2 mx-auto">
       <div class="image">
         <a href="{{ image.get_absolute.url }}">
           {% thumbnail image.image 300x300 crop="smart" as im %}
