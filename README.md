@@ -1,3 +1,4 @@
+## You Must Use Virtual Environment else it will mess up with your default django migration table and you may need to uninstall and install django again. 
 - Add 127.0.0.1:8000 in etc/environment file and name it mysite.com
 
 - run https trusted server
