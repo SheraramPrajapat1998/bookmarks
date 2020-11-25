@@ -1,4 +1,5 @@
-Add 127.0.0.1:8000 in etc/environment file and name it mysite.com
+## You Must Use Virtual Environment else it will mess up with your default django migration table and you may need to uninstall and install django again. 
+- Add 127.0.0.1:8000 in etc/environment file and name it mysite.com
 
 - run https trusted server
   python manage.py runserver_plus --cert-file cert.crt
@@ -16,7 +17,9 @@ Select any image it will redirect to form where you can fill form and save that 
 
 
 #### NOTE:
-  When you are accessing your site through HTTPS. Your browser might show a security
+- When you are accessing your site through HTTPS. Your browser might show a security
   warning because you are using a self-generated certificate. If this is the case, access
   the advanced information displayed by your browser and accept the self-signed
   certificate so that your browser trusts the certificate.
+  
+- You need to run redis server to view most viewed images and total views on an image. 
